@@ -1,0 +1,20 @@
+<div class="calendar">
+    <div class="title">
+        {{ title }}
+    </div>
+
+    <div class="week">
+        <app-date class="day-of-week" *ngFor="let date of dates[0]" [date]="date" format="ddd"></app-date>
+    </div>
+
+    <div class="month">
+        <div class="week" *ngFor="let week of dates">
+            <app-date class="day-of-month" *ngFor="let date of week" [date]="date" format="DD" [class]="
+            [
+                isHoliday(date),
+                isRestDay(date),
+                isSameMonth(date)
+            ]"></app-date>
+        </div>
+    </div>
+</div>

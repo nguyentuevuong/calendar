@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'calendar';
+  baseDate: Date = new Date(2020, 7, 1);
 }
