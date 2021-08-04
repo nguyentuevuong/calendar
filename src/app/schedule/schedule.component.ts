@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import * as _ from 'lodash';
+import { chunk, range } from 'lodash';
 import * as moment from 'moment';
 
 
@@ -32,9 +32,9 @@ export class ScheduleComponent {
 
     const firstDate = moment(baseDate).startOf('month').startOf('week');
 
-    const dates = _.range(0, 42).map((i) => firstDate.clone().add(i, 'day').toDate());
+    const dates = range(0, 42).map((i) => firstDate.clone().add(i, 'day').toDate());
 
-    return _.chunk(dates, 7);
+    return chunk(dates, 7);
   }
 
   isSameMonth(date: Date) {
